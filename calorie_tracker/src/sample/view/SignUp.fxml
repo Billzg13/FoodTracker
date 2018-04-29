@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #F2E6E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerSignUp">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="104.0" prefWidth="701.0" style="-fx-background-color: #F24646;">
+         <children>
+            <Label alignment="CENTER" layoutX="21.0" layoutY="18.0" prefHeight="69.0" prefWidth="219.0" text="CalorieTrackerV1" textFill="#fcfcfc">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="signUpUserName" layoutX="181.0" layoutY="153.0" prefHeight="25.0" prefWidth="354.0" promptText="username">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signUpPassword" layoutX="181.0" layoutY="200.0" prefHeight="25.0" prefWidth="354.0" promptText="password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signUpConfirm" layoutX="181.0" layoutY="244.0" prefHeight="25.0" prefWidth="354.0" promptText="confirm password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="SignUpSignButton" layoutX="262.0" layoutY="300.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="162.0" style="-fx-background-color: #312f2f;" text="Sign up" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="SuccessLabel" layoutX="506.0" layoutY="302.0" prefHeight="75.0" prefWidth="134.0" text="Success" visible="false">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

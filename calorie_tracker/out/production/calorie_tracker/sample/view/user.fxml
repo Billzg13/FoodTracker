@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #F2E6E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.UserController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="99.0" prefWidth="700.0" style="-fx-background-color: #F24646;">
+         <children>
+            <Label layoutX="54.0" layoutY="41.0" text="CalorieTrackerV1" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="usersLabel" layoutX="445.0" layoutY="21.0" prefHeight="59.0" prefWidth="215.0" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextArea fx:id="textArea" layoutX="14.0" layoutY="167.0" prefHeight="210.0" prefWidth="225.0" />
+      <TextField fx:id="foodTextField" layoutX="257.0" layoutY="182.0" prefHeight="37.0" prefWidth="282.0" promptText="what did you eat...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addFoodButton" layoutX="372.0" layoutY="272.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="138.0" style="-fx-background-color: #312f2f;" text="Add food" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="clearDayButton" layoutX="60.0" layoutY="114.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #312f2f;" text="Clear Day" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="kCalTextField" layoutX="564.0" layoutY="182.0" prefHeight="37.0" prefWidth="95.0" promptText="Grams">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label text="Label" />
+   </children>
+</AnchorPane>
