@@ -1,6 +1,7 @@
 package sample.controller;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,6 +15,9 @@ import sample.model.Food;
 public class UserController {
 
     private int userId;
+
+    @FXML
+    private Button fetchFoods;
 
     @FXML
     private ResourceBundle resources;
@@ -49,7 +53,8 @@ public class UserController {
             food.setGrams(Double.parseDouble(kCalTextField.getText()));
             food.setName(foodTextField.getText());
 
-           callDbMethodForFood(food);
+            //responsible for the food addition in DB
+            callDbMethodForFood(food);
 
         });
 
@@ -58,9 +63,32 @@ public class UserController {
 
         });
 
+
+        fetchFoods.setOnAction(event -> {
+            ResultSet foodTable = fetchFoodFromDb();
+
+
+
+            String foodName;
+            Double foodGram;
+
+            try {
+
+                while (foodTable.next()) {
+                    System.out.println(foodTable.getString("food"));
+                    System.out.println(foodTable.getDouble("grams"));
+                    foodName = foodTable.getString("food");
+                    foodGram = foodTable.getDouble("grams");
+                    textArea.appendText("food: "+foodName+" grams: "+foodGram+"\n");
+
+                }
+            }catch (Exception e){
+                System.out.println("probem at while"+e );
+            }
+        });
+
+
     } //end of init
-
-
 
 
     public void setUserId(int id) {
@@ -69,9 +97,11 @@ public class UserController {
         usersLabel.setText("user :"+ this.userId);
     }
 
+
     public  int getUserId(){
         return userId;
     }
+
 
     //this inserts the food in DB for the user thas is logged in atm
     public void callDbMethodForFood(Food food){
@@ -80,6 +110,13 @@ public class UserController {
         DB.insertFoodInDb(food);
     }
 
+
+
+    public ResultSet fetchFoodFromDb(){
+
+        ResultSet rs = DB.getFoodFromTable(userId);
+        return  rs;
+    }
 
 
 
