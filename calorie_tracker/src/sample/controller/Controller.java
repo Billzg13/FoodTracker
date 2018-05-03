@@ -36,8 +36,6 @@ public class Controller {
     @FXML
     void initialize() {
 
-
-
         buttonSignIn.setOnAction(e -> {
             try {
                 User user = new User();
@@ -89,15 +87,10 @@ public class Controller {
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
-
         });
 
 
     } //end of init
-
-
-
-
 
 
 }

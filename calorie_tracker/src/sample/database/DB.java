@@ -4,6 +4,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import sample.model.Food;
 import sample.model.User;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 
 /*
@@ -87,7 +88,7 @@ public class DB {
         }
         return status;
 
-    } //end of insert Db
+    } //end of insert user in db
 
 
     public static Boolean insertFoodInDb(Food food){
@@ -122,7 +123,8 @@ public class DB {
             e.printStackTrace();
         }
         return status;
-    }
+    } //end of insert food in db
+
 
     public static int getUserId(User user){
         int id = 0;
@@ -153,8 +155,34 @@ public class DB {
         }
         return id;
 
-    }
+    } //end of getUserId
 
+
+    public static ResultSet getFoodFromTable(int id){
+        ResultSet rs = null;
+
+        String ps = "select * from foods where userid = ?";
+
+        Connection con=DB.getConnection();
+        try {
+            PreparedStatement st = con.prepareStatement(ps);
+
+            st.setInt(1, id);
+
+            rs = st.executeQuery();
+
+            if (rs.next()){
+                return rs;
+            }
+
+        }catch (Exception exc){
+            System.out.println("problem at db: getFoodFromTable" +exc);;
+        }
+
+
+
+    return rs;
+    } //end of getFood
 
 
 
